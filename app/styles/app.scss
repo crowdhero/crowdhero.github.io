@@ -1,0 +1,14 @@
+@import "settings";
+@import 'foundation';
+@include foundation-everything;
+
+.black {
+  color: black;
+}
+
+html {
+  padding-bottom: 20px;
+}
+body {
+  margin: 2%;
+}
