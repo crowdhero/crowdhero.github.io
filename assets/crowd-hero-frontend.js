@@ -6,6 +6,14 @@
 
 /* jshint ignore:end */
 
+define('crowd-hero-frontend/adapters/application', ['exports', 'ember-data-fixture-adapter'], function (exports, _emberDataFixtureAdapter) {
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function get() {
+      return _emberDataFixtureAdapter['default'];
+    }
+  });
+});
 define('crowd-hero-frontend/app', ['exports', 'ember', 'crowd-hero-frontend/resolver', 'ember-load-initializers', 'crowd-hero-frontend/config/environment'], function (exports, _ember, _crowdHeroFrontendResolver, _emberLoadInitializers, _crowdHeroFrontendConfigEnvironment) {
 
   var App = undefined;
@@ -150,11 +158,6 @@ define('crowd-hero-frontend/components/zf-tooltip', ['exports', 'ember-cli-found
     get: function get() {
       return _emberCliFoundation6SassComponentsZfTooltip['default'];
     }
-  });
-});
-define('crowd-hero-frontend/contribution/adapter', ['exports', 'ember-data'], function (exports, _emberData) {
-  exports['default'] = _emberData['default'].RESTAdapter.extend({
-    namespace: 'api'
   });
 });
 define('crowd-hero-frontend/contribution/model', ['exports', 'ember-data'], function (exports, _emberData) {
@@ -1105,7 +1108,7 @@ define("crowd-hero-frontend/events/-form/template", ["exports"], function (expor
             "column": 0
           },
           "end": {
-            "line": 78,
+            "line": 79,
             "column": 0
           }
         },
@@ -1118,6 +1121,22 @@ define("crowd-hero-frontend/events/-form/template", ["exports"], function (expor
       buildFragment: function buildFragment(dom) {
         var el0 = dom.createDocumentFragment();
         var el1 = dom.createElement("form");
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("div");
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("label");
+        var el4 = dom.createTextNode("\n      Name\n      ");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createComment("");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createTextNode("\n    ");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n  ");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("div");
@@ -1140,11 +1159,11 @@ define("crowd-hero-frontend/events/-form/template", ["exports"], function (expor
         var el3 = dom.createTextNode("\n    ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("label");
-        var el4 = dom.createTextNode("\n      Starttime\n      ");
+        var el4 = dom.createTextNode("\n      Start date\n      ");
         dom.appendChild(el3, el4);
         var el4 = dom.createComment("");
         dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode("\n    ");
+        var el4 = dom.createTextNode("\n\n    ");
         dom.appendChild(el3, el4);
         dom.appendChild(el2, el3);
         var el3 = dom.createTextNode("\n  ");
@@ -1156,7 +1175,7 @@ define("crowd-hero-frontend/events/-form/template", ["exports"], function (expor
         var el3 = dom.createTextNode("\n    ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("label");
-        var el4 = dom.createTextNode("\n      Endtime\n      ");
+        var el4 = dom.createTextNode("\n      End date\n      ");
         dom.appendChild(el3, el4);
         var el4 = dom.createComment("");
         dom.appendChild(el3, el4);
@@ -1252,7 +1271,7 @@ define("crowd-hero-frontend/events/-form/template", ["exports"], function (expor
         var el3 = dom.createTextNode("\n    ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("label");
-        var el4 = dom.createTextNode("\n      Eventimagesrc\n      ");
+        var el4 = dom.createTextNode("\n      Event image url\n      ");
         dom.appendChild(el3, el4);
         var el4 = dom.createComment("");
         dom.appendChild(el3, el4);
@@ -1284,23 +1303,7 @@ define("crowd-hero-frontend/events/-form/template", ["exports"], function (expor
         var el3 = dom.createTextNode("\n    ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("label");
-        var el4 = dom.createTextNode("\n      Name\n      ");
-        dom.appendChild(el3, el4);
-        var el4 = dom.createComment("");
-        dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode("\n    ");
-        dom.appendChild(el3, el4);
-        dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("\n  ");
-        dom.appendChild(el2, el3);
-        dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n  ");
-        dom.appendChild(el1, el2);
-        var el2 = dom.createElement("div");
-        var el3 = dom.createTextNode("\n    ");
-        dom.appendChild(el2, el3);
-        var el3 = dom.createElement("label");
-        var el4 = dom.createTextNode("\n      Expectedvolunteers\n      ");
+        var el4 = dom.createTextNode("\n      Expected Volunteers\n      ");
         dom.appendChild(el3, el4);
         var el4 = dom.createComment("");
         dom.appendChild(el3, el4);
@@ -1347,7 +1350,7 @@ define("crowd-hero-frontend/events/-form/template", ["exports"], function (expor
         morphs[12] = dom.createMorphAt(dom.childAt(element0, [23, 1]), 1, 1);
         return morphs;
       },
-      statements: [["element", "action", ["save"], ["on", "submit"], ["loc", [null, [1, 6], [1, 35]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.type", ["loc", [null, [5, 32], [5, 42]]]]], [], []]], ["loc", [null, [5, 6], [5, 44]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.startTime", ["loc", [null, [11, 32], [11, 47]]]]], [], []]], ["loc", [null, [11, 6], [11, 49]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.endTime", ["loc", [null, [17, 32], [17, 45]]]]], [], []]], ["loc", [null, [17, 6], [17, 47]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.location", ["loc", [null, [23, 32], [23, 46]]]]], [], []]], ["loc", [null, [23, 6], [23, 48]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.organizer", ["loc", [null, [29, 32], [29, 47]]]]], [], []]], ["loc", [null, [29, 6], [29, 49]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.causes", ["loc", [null, [35, 32], [35, 44]]]]], [], []]], ["loc", [null, [35, 6], [35, 46]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.contributors", ["loc", [null, [41, 32], [41, 50]]]]], [], []]], ["loc", [null, [41, 6], [41, 52]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.beneficiary", ["loc", [null, [47, 32], [47, 49]]]]], [], []]], ["loc", [null, [47, 6], [47, 51]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.eventImageSrc", ["loc", [null, [53, 32], [53, 51]]]]], [], []]], ["loc", [null, [53, 6], [53, 53]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.description", ["loc", [null, [59, 32], [59, 49]]]]], [], []]], ["loc", [null, [59, 6], [59, 51]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.name", ["loc", [null, [65, 32], [65, 42]]]]], [], []]], ["loc", [null, [65, 6], [65, 44]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.expectedVolunteers", ["loc", [null, [71, 32], [71, 56]]]]], [], []]], ["loc", [null, [71, 6], [71, 58]]]]],
+      statements: [["element", "action", ["save"], ["on", "submit"], ["loc", [null, [1, 6], [1, 35]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.name", ["loc", [null, [5, 32], [5, 42]]]]], [], []]], ["loc", [null, [5, 6], [5, 44]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.type", ["loc", [null, [11, 32], [11, 42]]]]], [], []]], ["loc", [null, [11, 6], [11, 44]]]], ["inline", "pick-a-date", [], ["date", ["subexpr", "readonly", [["get", "date", ["loc", [null, [17, 35], [17, 39]]]]], [], ["loc", [null, [17, 25], [17, 40]]]], "on-selected", ["subexpr", "action", [["subexpr", "mut", [["get", "date", ["loc", [null, [17, 66], [17, 70]]]]], [], ["loc", [null, [17, 61], [17, 71]]]]], [], ["loc", [null, [17, 53], [17, 72]]]], "placeholder", "Pick a date", "options", ["subexpr", "readonly", [["get", "extraPickadateOptions", ["loc", [null, [17, 117], [17, 138]]]]], [], ["loc", [null, [17, 107], [17, 139]]]], "value", ["subexpr", "@mut", [["get", "model.startDate", ["loc", [null, [17, 146], [17, 161]]]]], [], []]], ["loc", [null, [17, 6], [17, 163]]]], ["inline", "pick-a-date", [], ["date", ["subexpr", "readonly", [["get", "date", ["loc", [null, [24, 35], [24, 39]]]]], [], ["loc", [null, [24, 25], [24, 40]]]], "on-selected", ["subexpr", "action", [["subexpr", "mut", [["get", "date", ["loc", [null, [24, 66], [24, 70]]]]], [], ["loc", [null, [24, 61], [24, 71]]]]], [], ["loc", [null, [24, 53], [24, 72]]]], "placeholder", "Pick a date", "options", ["subexpr", "readonly", [["get", "extraPickadateOptions", ["loc", [null, [24, 117], [24, 138]]]]], [], ["loc", [null, [24, 107], [24, 139]]]], "value", ["subexpr", "@mut", [["get", "model.startDate", ["loc", [null, [24, 146], [24, 161]]]]], [], []]], ["loc", [null, [24, 6], [24, 163]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.location", ["loc", [null, [30, 32], [30, 46]]]]], [], []]], ["loc", [null, [30, 6], [30, 48]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.organizer", ["loc", [null, [36, 32], [36, 47]]]]], [], []]], ["loc", [null, [36, 6], [36, 49]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.causes", ["loc", [null, [42, 32], [42, 44]]]]], [], []]], ["loc", [null, [42, 6], [42, 46]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.contributors", ["loc", [null, [48, 32], [48, 50]]]]], [], []]], ["loc", [null, [48, 6], [48, 52]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.beneficiary", ["loc", [null, [54, 32], [54, 49]]]]], [], []]], ["loc", [null, [54, 6], [54, 51]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.eventImageSrc", ["loc", [null, [60, 32], [60, 51]]]]], [], []]], ["loc", [null, [60, 6], [60, 53]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.description", ["loc", [null, [66, 32], [66, 49]]]]], [], []]], ["loc", [null, [66, 6], [66, 51]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.expectedVolunteers", ["loc", [null, [72, 32], [72, 56]]]]], [], []]], ["loc", [null, [72, 6], [72, 58]]]]],
       locals: [],
       templates: []
     };
@@ -2267,11 +2270,11 @@ define("crowd-hero-frontend/index/template", ["exports"], function (exports) {
           "loc": {
             "source": null,
             "start": {
-              "line": 2,
+              "line": 6,
               "column": 0
             },
             "end": {
-              "line": 2,
+              "line": 6,
               "column": 35
             }
           },
@@ -2299,7 +2302,7 @@ define("crowd-hero-frontend/index/template", ["exports"], function (exports) {
       meta: {
         "fragmentReason": {
           "name": "missing-wrapper",
-          "problems": ["wrong-type", "multiple-nodes"]
+          "problems": ["multiple-nodes", "wrong-type"]
         },
         "revision": "Ember@2.4.1",
         "loc": {
@@ -2309,7 +2312,7 @@ define("crowd-hero-frontend/index/template", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 5,
+            "line": 9,
             "column": 0
           }
         },
@@ -2323,6 +2326,18 @@ define("crowd-hero-frontend/index/template", ["exports"], function (exports) {
         var el0 = dom.createDocumentFragment();
         var el1 = dom.createTextNode("\n");
         dom.appendChild(el0, el1);
+        var el1 = dom.createElement("h1");
+        var el2 = dom.createTextNode("Welcome to CrowdHero!");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("p");
+        var el2 = dom.createTextNode("We are a marketplace for philanthrophy heros to connect and contribute to purposeful causes in the world");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n\n");
+        dom.appendChild(el0, el1);
         var el1 = dom.createComment("");
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n\n");
@@ -2335,26 +2350,50 @@ define("crowd-hero-frontend/index/template", ["exports"], function (exports) {
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
         var morphs = new Array(2);
-        morphs[0] = dom.createMorphAt(fragment, 1, 1, contextualElement);
-        morphs[1] = dom.createMorphAt(fragment, 3, 3, contextualElement);
+        morphs[0] = dom.createMorphAt(fragment, 5, 5, contextualElement);
+        morphs[1] = dom.createMorphAt(fragment, 7, 7, contextualElement);
         return morphs;
       },
-      statements: [["block", "link-to", ["events"], [], 0, null, ["loc", [null, [2, 0], [2, 47]]]], ["content", "outlet", ["loc", [null, [4, 0], [4, 10]]]]],
+      statements: [["block", "link-to", ["events"], [], 0, null, ["loc", [null, [6, 0], [6, 47]]]], ["content", "outlet", ["loc", [null, [8, 0], [8, 10]]]]],
       locals: [],
       templates: [child0]
     };
   })());
 });
-define('crowd-hero-frontend/individual/adapter', ['exports', 'ember-data'], function (exports, _emberData) {
-  exports['default'] = _emberData['default'].RESTAdapter.extend({
-    namespace: 'api'
-  });
-});
 define('crowd-hero-frontend/individual/model', ['exports', 'ember-data', 'crowd-hero-frontend/user/model'], function (exports, _emberData, _crowdHeroFrontendUserModel) {
-  exports['default'] = _crowdHeroFrontendUserModel['default'].extend({
+
+  var Individual = _crowdHeroFrontendUserModel['default'].extend({
     org: _emberData['default'].belongsTo('org'),
     hourlyRate: _emberData['default'].attr('number')
   });
+
+  /*
+    locations: DS.attr('array'),
+    causes: DS.attr('array'),
+    contributions: DS.hasMany('contribution'),
+    industries: DS.attr('array'),
+    receivedContributions: DS.hasMany('contribution'),
+    skills: DS.attr('array'),
+    name: DS.attr('string'),
+    email: DS.attr('string')
+  */
+
+  Individual.reopenClass({
+    FIXTURES: [{
+      id: 1,
+      name: "Devin Rhode",
+      locations: ['Sunnyvale, CA'],
+      causes: ["Pet safety", "Homelessness"],
+      contributions: [1],
+      industries: ['Technology', 'Music'],
+      receivedContributions: [1],
+      skills: ["developer"],
+      email: "devinrhode@gmail.com"
+
+    }]
+  });
+
+  exports['default'] = Individual;
 });
 define("crowd-hero-frontend/individuals/-form/template", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
@@ -3839,25 +3878,40 @@ define('crowd-hero-frontend/mixins/users/save-model-mixin', ['exports', 'ember']
     }
   });
 });
-define('crowd-hero-frontend/org/adapter', ['exports', 'ember-data'], function (exports, _emberData) {
-  exports['default'] = _emberData['default'].RESTAdapter.extend({
-    namespace: 'api'
-  });
-});
 define('crowd-hero-frontend/org/model', ['exports', 'ember-data', 'crowd-hero-frontend/user/model'], function (exports, _emberData, _crowdHeroFrontendUserModel) {
-  exports['default'] = _crowdHeroFrontendUserModel['default'].extend({
+
+  var Org = _crowdHeroFrontendUserModel['default'].extend({
     type: _emberData['default'].attr('string'),
     members: _emberData['default'].hasMany('user'),
-    partners: _emberData['default'].hasMany('org'),
-    locations: _emberData['default'].attr('array'),
-    causes: _emberData['default'].attr('array'),
-    contributions: _emberData['default'].hasMany('contribution'),
-    industries: _emberData['default'].attr('array'),
-    receivedContributions: _emberData['default'].hasMany('contribution'),
-    skills: _emberData['default'].attr('array'),
-    name: _emberData['default'].attr('string'),
-    email: _emberData['default'].attr('string')
+    partners: _emberData['default'].hasMany('org')
+    // locations: DS.attr('array'),
+    // causes: DS.attr('array'),
+    // contributions: DS.hasMany('contribution'),
+    // industries: DS.attr('array'),
+    // receivedContributions: DS.hasMany('contribution'),
+    // skills: DS.attr('array'),
+    // name: DS.attr('string'),
+    // email: DS.attr('string')
   });
+
+  Org.reopenClass({
+    FIXTURES: [{
+      id: 1,
+      name: "CrowdHero",
+      type: "corp",
+      members: [1, 2],
+      partners: [],
+      locations: ['San Francisco, CA', 'Sunnyvale, CA'],
+      causes: ['non-profit'],
+      contributions: [1],
+      industries: ['technology'],
+      receivedContributions: [],
+      skills: ["Fundraising"],
+      email: "hello@crowdhero.org"
+    }]
+  });
+
+  exports['default'] = Org;
 });
 define("crowd-hero-frontend/orgs/-form/template", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
@@ -5540,16 +5594,16 @@ define('crowd-hero-frontend/transforms/array', ['exports', 'ember-data', 'ember'
   exports['default'] = _emberData['default'].Transform.extend({
     deserialize: function deserialize(value) {
       if (_ember['default'].isArray(value)) {
-        return Em.A(value);
+        return _ember['default'].A(value);
       } else {
-        return Em.A();
+        return _ember['default'].A();
       }
     },
     serialize: function serialize(value) {
       if (_ember['default'].isArray(value)) {
-        return Em.A(value);
+        return _ember['default'].A(value);
       } else {
-        return Em.A();
+        return _ember['default'].A();
       }
     }
   });
@@ -6550,7 +6604,7 @@ catch(err) {
 /* jshint ignore:start */
 
 if (!runningTests) {
-  require("crowd-hero-frontend/app")["default"].create({"name":"crowd-hero-frontend","version":"0.0.0+f7954f4e"});
+  require("crowd-hero-frontend/app")["default"].create({"name":"crowd-hero-frontend","version":"0.0.0+"});
 }
 
 /* jshint ignore:end */

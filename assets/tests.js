@@ -687,6 +687,15 @@ define('crowd-hero-frontend/tests/acceptance/users-test.jshint', ['exports'], fu
     assert.ok(true, 'acceptance/users-test.js should pass jshint.');
   });
 });
+define('crowd-hero-frontend/tests/adapters/application.jshint', ['exports'], function (exports) {
+  'use strict';
+
+  QUnit.module('JSHint - adapters/application.js');
+  QUnit.test('should pass jshint', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'adapters/application.js should pass jshint.');
+  });
+});
 define('crowd-hero-frontend/tests/app.jshint', ['exports'], function (exports) {
   'use strict';
 
@@ -694,15 +703,6 @@ define('crowd-hero-frontend/tests/app.jshint', ['exports'], function (exports) {
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
     assert.ok(true, 'app.js should pass jshint.');
-  });
-});
-define('crowd-hero-frontend/tests/contribution/adapter.jshint', ['exports'], function (exports) {
-  'use strict';
-
-  QUnit.module('JSHint - contribution/adapter.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'contribution/adapter.js should pass jshint.');
   });
 });
 define('crowd-hero-frontend/tests/contribution/model.jshint', ['exports'], function (exports) {
@@ -890,15 +890,6 @@ define('crowd-hero-frontend/tests/index/route.jshint', ['exports'], function (ex
     assert.ok(true, 'index/route.js should pass jshint.');
   });
 });
-define('crowd-hero-frontend/tests/individual/adapter.jshint', ['exports'], function (exports) {
-  'use strict';
-
-  QUnit.module('JSHint - individual/adapter.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'individual/adapter.js should pass jshint.');
-  });
-});
 define('crowd-hero-frontend/tests/individual/model.jshint', ['exports'], function (exports) {
   'use strict';
 
@@ -1052,15 +1043,6 @@ define('crowd-hero-frontend/tests/mixins/users/save-model-mixin.jshint', ['expor
     assert.ok(true, 'mixins/users/save-model-mixin.js should pass jshint.');
   });
 });
-define('crowd-hero-frontend/tests/org/adapter.jshint', ['exports'], function (exports) {
-  'use strict';
-
-  QUnit.module('JSHint - org/adapter.js');
-  QUnit.test('should pass jshint', function (assert) {
-    assert.expect(1);
-    assert.ok(true, 'org/adapter.js should pass jshint.');
-  });
-});
 define('crowd-hero-frontend/tests/org/model.jshint', ['exports'], function (exports) {
   'use strict';
 
@@ -1134,7 +1116,7 @@ define('crowd-hero-frontend/tests/transforms/array.jshint', ['exports'], functio
   QUnit.module('JSHint - transforms/array.js');
   QUnit.test('should pass jshint', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'transforms/array.js should pass jshint.\ntransforms/array.js: line 7, col 14, \'Em\' is not defined.\ntransforms/array.js: line 9, col 14, \'Em\' is not defined.\ntransforms/array.js: line 14, col 14, \'Em\' is not defined.\ntransforms/array.js: line 16, col 14, \'Em\' is not defined.\n\n4 errors');
+    assert.ok(true, 'transforms/array.js should pass jshint.');
   });
 });
 define('crowd-hero-frontend/tests/unit/event/model-test', ['exports', 'ember-qunit'], function (exports, _emberQunit) {
