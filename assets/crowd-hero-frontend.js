@@ -2262,42 +2262,6 @@ define('crowd-hero-frontend/index/route', ['exports', 'ember'], function (export
 });
 define("crowd-hero-frontend/index/template", ["exports"], function (exports) {
   exports["default"] = Ember.HTMLBars.template((function () {
-    var child0 = (function () {
-      return {
-        meta: {
-          "fragmentReason": false,
-          "revision": "Ember@2.4.1",
-          "loc": {
-            "source": null,
-            "start": {
-              "line": 6,
-              "column": 0
-            },
-            "end": {
-              "line": 6,
-              "column": 35
-            }
-          },
-          "moduleName": "crowd-hero-frontend/index/template.hbs"
-        },
-        isEmpty: false,
-        arity: 0,
-        cachedFragment: null,
-        hasRendered: false,
-        buildFragment: function buildFragment(dom) {
-          var el0 = dom.createDocumentFragment();
-          var el1 = dom.createTextNode("See all events");
-          dom.appendChild(el0, el1);
-          return el0;
-        },
-        buildRenderNodes: function buildRenderNodes() {
-          return [];
-        },
-        statements: [],
-        locals: [],
-        templates: []
-      };
-    })();
     return {
       meta: {
         "fragmentReason": {
@@ -2312,8 +2276,8 @@ define("crowd-hero-frontend/index/template", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 9,
-            "column": 0
+            "line": 17,
+            "column": 10
           }
         },
         "moduleName": "crowd-hero-frontend/index/template.hbs"
@@ -2324,39 +2288,47 @@ define("crowd-hero-frontend/index/template", ["exports"], function (exports) {
       hasRendered: false,
       buildFragment: function buildFragment(dom) {
         var el0 = dom.createDocumentFragment();
-        var el1 = dom.createTextNode("\n");
-        dom.appendChild(el0, el1);
         var el1 = dom.createElement("h1");
+        dom.setAttribute(el1, "style", "color:white");
         var el2 = dom.createTextNode("Welcome to CrowdHero!");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n\n");
         dom.appendChild(el0, el1);
         var el1 = dom.createElement("p");
-        var el2 = dom.createTextNode("We are a marketplace for philanthrophy heros to connect and contribute to purposeful causes in the world");
+        dom.setAttribute(el1, "style", "color:white");
+        var el2 = dom.createTextNode("We are an employee engagement platform, which provides curated opportunities to give-- helping create a greater impact in the world.");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("img");
+        dom.setAttribute(el1, "class", "logo");
+        dom.setAttribute(el1, "src", "assets/logo.png");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("style");
+        var el2 = dom.createTextNode("\nbody: {\nbackground-color:#00b7d1;\n}\n");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n\n");
         dom.appendChild(el0, el1);
         var el1 = dom.createComment("");
         dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n\n");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createComment("");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n");
-        dom.appendChild(el0, el1);
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var morphs = new Array(2);
-        morphs[0] = dom.createMorphAt(fragment, 5, 5, contextualElement);
-        morphs[1] = dom.createMorphAt(fragment, 7, 7, contextualElement);
+        var morphs = new Array(1);
+        morphs[0] = dom.createMorphAt(fragment, 9, 9, contextualElement);
+        dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["block", "link-to", ["events"], [], 0, null, ["loc", [null, [6, 0], [6, 47]]]], ["content", "outlet", ["loc", [null, [8, 0], [8, 10]]]]],
+      statements: [["content", "outlet", ["loc", [null, [17, 0], [17, 10]]]]],
       locals: [],
-      templates: [child0]
+      templates: []
     };
   })());
 });
