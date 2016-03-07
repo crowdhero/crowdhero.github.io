@@ -2276,7 +2276,7 @@ define("crowd-hero-frontend/index/template", ["exports"], function (exports) {
             "column": 0
           },
           "end": {
-            "line": 17,
+            "line": 19,
             "column": 10
           }
         },
@@ -2288,30 +2288,38 @@ define("crowd-hero-frontend/index/template", ["exports"], function (exports) {
       hasRendered: false,
       buildFragment: function buildFragment(dom) {
         var el0 = dom.createDocumentFragment();
-        var el1 = dom.createElement("h1");
-        dom.setAttribute(el1, "style", "color:white");
-        var el2 = dom.createTextNode("Welcome to CrowdHero!");
+        var el1 = dom.createElement("div");
+        dom.setAttribute(el1, "style", "text-align:center");
+        var el2 = dom.createTextNode("\n");
         dom.appendChild(el1, el2);
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n\n");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createElement("p");
-        dom.setAttribute(el1, "style", "color:white");
-        var el2 = dom.createTextNode("We are an employee engagement platform, which provides curated opportunities to give-- helping create a greater impact in the world.");
+        var el2 = dom.createElement("h1");
+        dom.setAttribute(el2, "style", "color:white");
+        var el3 = dom.createTextNode("Welcome to CrowdHero!");
+        dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n\n");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createElement("img");
-        dom.setAttribute(el1, "class", "logo");
-        dom.setAttribute(el1, "src", "assets/logo.png");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n\n");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createElement("style");
-        var el2 = dom.createTextNode("\nbody: {\nbackground-color:#00b7d1;\n}\n");
+        var el2 = dom.createTextNode("\n\n");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("p");
+        dom.setAttribute(el2, "style", "color:white");
+        var el3 = dom.createTextNode("We are an employee engagement platform, which provides curated opportunities to give-- helping create a greater impact in the world.");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n\n");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("img");
+        dom.setAttribute(el2, "class", "logo");
+        dom.setAttribute(el2, "src", "assets/logo.png");
+        dom.setAttribute(el2, "style", "height: 300px");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n\n");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("style");
+        var el3 = dom.createTextNode("\nbody {\nbackground-color:#00b7d1;\n}\n");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n\n");
@@ -2322,11 +2330,11 @@ define("crowd-hero-frontend/index/template", ["exports"], function (exports) {
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
         var morphs = new Array(1);
-        morphs[0] = dom.createMorphAt(fragment, 9, 9, contextualElement);
+        morphs[0] = dom.createMorphAt(fragment, 2, 2, contextualElement);
         dom.insertBoundary(fragment, null);
         return morphs;
       },
-      statements: [["content", "outlet", ["loc", [null, [17, 0], [17, 10]]]]],
+      statements: [["content", "outlet", ["loc", [null, [19, 0], [19, 10]]]]],
       locals: [],
       templates: []
     };
