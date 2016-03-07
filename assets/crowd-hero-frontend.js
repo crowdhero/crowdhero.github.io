@@ -2368,8 +2368,21 @@ define('crowd-hero-frontend/individual/model', ['exports', 'ember-data', 'crowd-
       industries: ['Technology', 'Music'],
       receivedContributions: [1],
       skills: ["developer"],
-      email: "devinrhode@gmail.com"
-
+      email: "devinrhode@gmail.com",
+      org: 1,
+      hourlyRate: 150
+    }, {
+      id: 2,
+      name: "Anu",
+      locations: ['Sunnyvale, CA'],
+      causes: ["Children", "Homelessness"],
+      contributions: [1],
+      industries: ['Technology', 'Music'],
+      receivedContributions: [1],
+      skills: ["developer"],
+      email: "anukrishna@gmail.com",
+      org: 1,
+      hourlyRate: 150
     }]
   });
 
@@ -2695,11 +2708,7 @@ define("crowd-hero-frontend/individuals/index/template", ["exports"], function (
             var el2 = dom.createTextNode("\n          ");
             dom.appendChild(el1, el2);
             var el2 = dom.createElement("td");
-            var el3 = dom.createTextNode("\n            ");
-            dom.appendChild(el2, el3);
-            var el3 = dom.createComment("");
-            dom.appendChild(el2, el3);
-            var el3 = dom.createTextNode("\n          ");
+            var el3 = dom.createTextNode("\n            none\n          ");
             dom.appendChild(el2, el3);
             dom.appendChild(el1, el2);
             var el2 = dom.createTextNode("\n          ");
@@ -2735,11 +2744,7 @@ define("crowd-hero-frontend/individuals/index/template", ["exports"], function (
             var el2 = dom.createTextNode("\n          ");
             dom.appendChild(el1, el2);
             var el2 = dom.createElement("td");
-            var el3 = dom.createTextNode("\n            ");
-            dom.appendChild(el2, el3);
-            var el3 = dom.createComment("");
-            dom.appendChild(el2, el3);
-            var el3 = dom.createTextNode("\n          ");
+            var el3 = dom.createTextNode("\n            none\n          ");
             dom.appendChild(el2, el3);
             dom.appendChild(el1, el2);
             var el2 = dom.createTextNode("\n          ");
@@ -2755,11 +2760,7 @@ define("crowd-hero-frontend/individuals/index/template", ["exports"], function (
             var el2 = dom.createTextNode("\n          ");
             dom.appendChild(el1, el2);
             var el2 = dom.createElement("td");
-            var el3 = dom.createTextNode("\n            ");
-            dom.appendChild(el2, el3);
-            var el3 = dom.createComment("");
-            dom.appendChild(el2, el3);
-            var el3 = dom.createTextNode("\n          ");
+            var el3 = dom.createTextNode("\n            none\n          ");
             dom.appendChild(el2, el3);
             dom.appendChild(el1, el2);
             var el2 = dom.createTextNode("\n          ");
@@ -2825,23 +2826,20 @@ define("crowd-hero-frontend/individuals/index/template", ["exports"], function (
           buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
             var element0 = dom.childAt(fragment, [1]);
             var element1 = dom.childAt(element0, [25, 1]);
-            var morphs = new Array(13);
+            var morphs = new Array(10);
             morphs[0] = dom.createMorphAt(dom.childAt(element0, [1]), 1, 1);
-            morphs[1] = dom.createMorphAt(dom.childAt(element0, [3]), 1, 1);
-            morphs[2] = dom.createMorphAt(dom.childAt(element0, [5]), 1, 1);
-            morphs[3] = dom.createMorphAt(dom.childAt(element0, [7]), 1, 1);
-            morphs[4] = dom.createMorphAt(dom.childAt(element0, [9]), 1, 1);
-            morphs[5] = dom.createMorphAt(dom.childAt(element0, [11]), 1, 1);
-            morphs[6] = dom.createMorphAt(dom.childAt(element0, [13]), 1, 1);
-            morphs[7] = dom.createMorphAt(dom.childAt(element0, [15]), 1, 1);
-            morphs[8] = dom.createMorphAt(dom.childAt(element0, [17]), 1, 1);
-            morphs[9] = dom.createMorphAt(dom.childAt(element0, [19]), 1, 1);
-            morphs[10] = dom.createMorphAt(dom.childAt(element0, [21]), 1, 1);
-            morphs[11] = dom.createMorphAt(dom.childAt(element0, [23]), 1, 1);
-            morphs[12] = dom.createElementMorph(element1);
+            morphs[1] = dom.createMorphAt(dom.childAt(element0, [5]), 1, 1);
+            morphs[2] = dom.createMorphAt(dom.childAt(element0, [7]), 1, 1);
+            morphs[3] = dom.createMorphAt(dom.childAt(element0, [9]), 1, 1);
+            morphs[4] = dom.createMorphAt(dom.childAt(element0, [13]), 1, 1);
+            morphs[5] = dom.createMorphAt(dom.childAt(element0, [17]), 1, 1);
+            morphs[6] = dom.createMorphAt(dom.childAt(element0, [19]), 1, 1);
+            morphs[7] = dom.createMorphAt(dom.childAt(element0, [21]), 1, 1);
+            morphs[8] = dom.createMorphAt(dom.childAt(element0, [23]), 1, 1);
+            morphs[9] = dom.createElementMorph(element1);
             return morphs;
           },
-          statements: [["content", "individual.org", ["loc", [null, [50, 12], [50, 30]]]], ["content", "individual.hourlyRate", ["loc", [null, [53, 12], [53, 37]]]], ["content", "individual.locations", ["loc", [null, [56, 12], [56, 36]]]], ["content", "individual.causes", ["loc", [null, [59, 12], [59, 33]]]], ["content", "individual.contributions", ["loc", [null, [62, 12], [62, 40]]]], ["content", "individual.industries", ["loc", [null, [65, 12], [65, 37]]]], ["content", "individual.receivedContributions", ["loc", [null, [68, 12], [68, 48]]]], ["content", "individual.skills", ["loc", [null, [71, 12], [71, 33]]]], ["content", "individual.name", ["loc", [null, [74, 12], [74, 31]]]], ["content", "individual.email", ["loc", [null, [77, 12], [77, 32]]]], ["inline", "link-to", ["Edit", "individuals.edit", ["get", "individual", ["loc", [null, [80, 48], [80, 58]]]]], [], ["loc", [null, [80, 12], [80, 60]]]], ["inline", "link-to", ["Show", "individuals.show", ["get", "individual", ["loc", [null, [83, 48], [83, 58]]]]], [], ["loc", [null, [83, 12], [83, 60]]]], ["element", "action", ["remove", ["get", "individual", ["loc", [null, [86, 42], [86, 52]]]]], [], ["loc", [null, [86, 24], [86, 54]]]]],
+          statements: [["content", "individual.name", ["loc", [null, [50, 12], [50, 31]]]], ["content", "individual.hourlyRate", ["loc", [null, [56, 12], [56, 37]]]], ["content", "individual.locations", ["loc", [null, [59, 12], [59, 36]]]], ["content", "individual.causes", ["loc", [null, [62, 12], [62, 33]]]], ["content", "individual.industries", ["loc", [null, [68, 12], [68, 37]]]], ["content", "individual.skills", ["loc", [null, [74, 12], [74, 33]]]], ["content", "individual.email", ["loc", [null, [77, 12], [77, 32]]]], ["inline", "link-to", ["Edit", "individuals.edit", ["get", "individual", ["loc", [null, [80, 48], [80, 58]]]]], [], ["loc", [null, [80, 12], [80, 60]]]], ["inline", "link-to", ["Show", "individuals.show", ["get", "individual", ["loc", [null, [83, 48], [83, 58]]]]], [], ["loc", [null, [83, 12], [83, 60]]]], ["element", "action", ["remove", ["get", "individual", ["loc", [null, [86, 42], [86, 52]]]]], [], ["loc", [null, [86, 24], [86, 54]]]]],
           locals: ["individual"],
           templates: []
         };
@@ -2881,13 +2879,19 @@ define("crowd-hero-frontend/individuals/index/template", ["exports"], function (
           var el4 = dom.createTextNode("\n        ");
           dom.appendChild(el3, el4);
           var el4 = dom.createElement("th");
+          var el5 = dom.createTextNode("\n          Name\n        ");
+          dom.appendChild(el4, el5);
+          dom.appendChild(el3, el4);
+          var el4 = dom.createTextNode("\n        ");
+          dom.appendChild(el3, el4);
+          var el4 = dom.createElement("th");
           var el5 = dom.createTextNode("\n          Org\n        ");
           dom.appendChild(el4, el5);
           dom.appendChild(el3, el4);
           var el4 = dom.createTextNode("\n        ");
           dom.appendChild(el3, el4);
           var el4 = dom.createElement("th");
-          var el5 = dom.createTextNode("\n          Hourlyrate\n        ");
+          var el5 = dom.createTextNode("\n          Hourly Rate\n        ");
           dom.appendChild(el4, el5);
           dom.appendChild(el3, el4);
           var el4 = dom.createTextNode("\n        ");
@@ -2917,19 +2921,13 @@ define("crowd-hero-frontend/individuals/index/template", ["exports"], function (
           var el4 = dom.createTextNode("\n        ");
           dom.appendChild(el3, el4);
           var el4 = dom.createElement("th");
-          var el5 = dom.createTextNode("\n          Receivedcontributions\n        ");
+          var el5 = dom.createTextNode("\n          Received Contributions\n        ");
           dom.appendChild(el4, el5);
           dom.appendChild(el3, el4);
           var el4 = dom.createTextNode("\n        ");
           dom.appendChild(el3, el4);
           var el4 = dom.createElement("th");
           var el5 = dom.createTextNode("\n          Skills\n        ");
-          dom.appendChild(el4, el5);
-          dom.appendChild(el3, el4);
-          var el4 = dom.createTextNode("\n        ");
-          dom.appendChild(el3, el4);
-          var el4 = dom.createElement("th");
-          var el5 = dom.createTextNode("\n          Name\n        ");
           dom.appendChild(el4, el5);
           dom.appendChild(el3, el4);
           var el4 = dom.createTextNode("\n        ");
@@ -3191,7 +3189,43 @@ define("crowd-hero-frontend/individuals/show/template", ["exports"], function (e
         var el2 = dom.createTextNode("Individual show");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("p");
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("strong");
+        var el3 = dom.createTextNode("Name:");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("span");
+        var el3 = dom.createComment("");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n\n");
+        dom.appendChild(el0, el1);
+        var el1 = dom.createElement("p");
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("strong");
+        var el3 = dom.createTextNode("Email:");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("span");
+        var el3 = dom.createComment("");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n");
+        dom.appendChild(el1, el2);
+        dom.appendChild(el0, el1);
+        var el1 = dom.createTextNode("\n");
         dom.appendChild(el0, el1);
         var el1 = dom.createElement("p");
         var el2 = dom.createTextNode("\n  ");
@@ -3203,7 +3237,7 @@ define("crowd-hero-frontend/individuals/show/template", ["exports"], function (e
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("span");
-        var el3 = dom.createComment("");
+        var el3 = dom.createTextNode("none");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n");
@@ -3275,7 +3309,7 @@ define("crowd-hero-frontend/individuals/show/template", ["exports"], function (e
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("span");
-        var el3 = dom.createComment("");
+        var el3 = dom.createTextNode("none");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n");
@@ -3311,7 +3345,7 @@ define("crowd-hero-frontend/individuals/show/template", ["exports"], function (e
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("span");
-        var el3 = dom.createComment("");
+        var el3 = dom.createTextNode("none");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n");
@@ -3335,62 +3369,23 @@ define("crowd-hero-frontend/individuals/show/template", ["exports"], function (e
         var el2 = dom.createTextNode("\n");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n\n");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createElement("p");
-        var el2 = dom.createTextNode("\n  ");
-        dom.appendChild(el1, el2);
-        var el2 = dom.createElement("strong");
-        var el3 = dom.createTextNode("Name:");
-        dom.appendChild(el2, el3);
-        dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n  ");
-        dom.appendChild(el1, el2);
-        var el2 = dom.createElement("span");
-        var el3 = dom.createComment("");
-        dom.appendChild(el2, el3);
-        dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n");
-        dom.appendChild(el1, el2);
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n\n");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createElement("p");
-        var el2 = dom.createTextNode("\n  ");
-        dom.appendChild(el1, el2);
-        var el2 = dom.createElement("strong");
-        var el3 = dom.createTextNode("Email:");
-        dom.appendChild(el2, el3);
-        dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n  ");
-        dom.appendChild(el1, el2);
-        var el2 = dom.createElement("span");
-        var el3 = dom.createComment("");
-        dom.appendChild(el2, el3);
-        dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n");
-        dom.appendChild(el1, el2);
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n\n");
+        var el1 = dom.createTextNode("\n\n\n\n");
         dom.appendChild(el0, el1);
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var morphs = new Array(11);
+        var morphs = new Array(8);
         morphs[0] = dom.createMorphAt(dom.childAt(fragment, [0]), 1, 1);
         morphs[1] = dom.createMorphAt(dom.childAt(fragment, [4, 3]), 0, 0);
         morphs[2] = dom.createMorphAt(dom.childAt(fragment, [6, 3]), 0, 0);
-        morphs[3] = dom.createMorphAt(dom.childAt(fragment, [8, 3]), 0, 0);
-        morphs[4] = dom.createMorphAt(dom.childAt(fragment, [10, 3]), 0, 0);
-        morphs[5] = dom.createMorphAt(dom.childAt(fragment, [12, 3]), 0, 0);
-        morphs[6] = dom.createMorphAt(dom.childAt(fragment, [14, 3]), 0, 0);
-        morphs[7] = dom.createMorphAt(dom.childAt(fragment, [16, 3]), 0, 0);
-        morphs[8] = dom.createMorphAt(dom.childAt(fragment, [18, 3]), 0, 0);
-        morphs[9] = dom.createMorphAt(dom.childAt(fragment, [20, 3]), 0, 0);
-        morphs[10] = dom.createMorphAt(dom.childAt(fragment, [22, 3]), 0, 0);
+        morphs[3] = dom.createMorphAt(dom.childAt(fragment, [10, 3]), 0, 0);
+        morphs[4] = dom.createMorphAt(dom.childAt(fragment, [12, 3]), 0, 0);
+        morphs[5] = dom.createMorphAt(dom.childAt(fragment, [14, 3]), 0, 0);
+        morphs[6] = dom.createMorphAt(dom.childAt(fragment, [18, 3]), 0, 0);
+        morphs[7] = dom.createMorphAt(dom.childAt(fragment, [22, 3]), 0, 0);
         return morphs;
       },
-      statements: [["inline", "link-to", ["Individual list", "individuals.index"], [], ["loc", [null, [2, 2], [2, 52]]]], ["content", "model.org", ["loc", [null, [9, 8], [9, 21]]]], ["content", "model.hourlyRate", ["loc", [null, [14, 8], [14, 28]]]], ["content", "model.locations", ["loc", [null, [19, 8], [19, 27]]]], ["content", "model.causes", ["loc", [null, [24, 8], [24, 24]]]], ["content", "model.contributions", ["loc", [null, [29, 8], [29, 31]]]], ["content", "model.industries", ["loc", [null, [34, 8], [34, 28]]]], ["content", "model.receivedContributions", ["loc", [null, [39, 8], [39, 39]]]], ["content", "model.skills", ["loc", [null, [44, 8], [44, 24]]]], ["content", "model.name", ["loc", [null, [49, 8], [49, 22]]]], ["content", "model.email", ["loc", [null, [54, 8], [54, 23]]]]],
+      statements: [["inline", "link-to", ["Individual list", "individuals.index"], [], ["loc", [null, [2, 2], [2, 52]]]], ["content", "model.name", ["loc", [null, [8, 8], [8, 22]]]], ["content", "model.email", ["loc", [null, [13, 8], [13, 23]]]], ["content", "model.hourlyRate", ["loc", [null, [22, 8], [22, 28]]]], ["content", "model.locations", ["loc", [null, [27, 8], [27, 27]]]], ["content", "model.causes", ["loc", [null, [32, 8], [32, 24]]]], ["content", "model.industries", ["loc", [null, [42, 8], [42, 28]]]], ["content", "model.skills", ["loc", [null, [52, 8], [52, 24]]]]],
       locals: [],
       templates: []
     };
@@ -3928,6 +3923,22 @@ define("crowd-hero-frontend/orgs/-form/template", ["exports"], function (exports
         var el3 = dom.createTextNode("\n    ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("label");
+        var el4 = dom.createTextNode("\n      Name\n      ");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createComment("");
+        dom.appendChild(el3, el4);
+        var el4 = dom.createTextNode("\n    ");
+        dom.appendChild(el3, el4);
+        dom.appendChild(el2, el3);
+        var el3 = dom.createTextNode("\n  ");
+        dom.appendChild(el2, el3);
+        dom.appendChild(el1, el2);
+        var el2 = dom.createTextNode("\n  ");
+        dom.appendChild(el1, el2);
+        var el2 = dom.createElement("div");
+        var el3 = dom.createTextNode("\n    ");
+        dom.appendChild(el2, el3);
+        var el3 = dom.createElement("label");
         var el4 = dom.createTextNode("\n      Type\n      ");
         dom.appendChild(el3, el4);
         var el4 = dom.createComment("");
@@ -4072,22 +4083,6 @@ define("crowd-hero-frontend/orgs/-form/template", ["exports"], function (exports
         var el3 = dom.createTextNode("\n    ");
         dom.appendChild(el2, el3);
         var el3 = dom.createElement("label");
-        var el4 = dom.createTextNode("\n      Name\n      ");
-        dom.appendChild(el3, el4);
-        var el4 = dom.createComment("");
-        dom.appendChild(el3, el4);
-        var el4 = dom.createTextNode("\n    ");
-        dom.appendChild(el3, el4);
-        dom.appendChild(el2, el3);
-        var el3 = dom.createTextNode("\n  ");
-        dom.appendChild(el2, el3);
-        dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n  ");
-        dom.appendChild(el1, el2);
-        var el2 = dom.createElement("div");
-        var el3 = dom.createTextNode("\n    ");
-        dom.appendChild(el2, el3);
-        var el3 = dom.createElement("label");
         var el4 = dom.createTextNode("\n      Email\n      ");
         dom.appendChild(el3, el4);
         var el4 = dom.createComment("");
@@ -4134,7 +4129,7 @@ define("crowd-hero-frontend/orgs/-form/template", ["exports"], function (exports
         morphs[11] = dom.createMorphAt(dom.childAt(element0, [21, 1]), 1, 1);
         return morphs;
       },
-      statements: [["element", "action", ["save"], ["on", "submit"], ["loc", [null, [1, 6], [1, 35]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.type", ["loc", [null, [5, 32], [5, 42]]]]], [], []]], ["loc", [null, [5, 6], [5, 44]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.members", ["loc", [null, [11, 32], [11, 45]]]]], [], []]], ["loc", [null, [11, 6], [11, 47]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.partners", ["loc", [null, [17, 32], [17, 46]]]]], [], []]], ["loc", [null, [17, 6], [17, 48]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.locations", ["loc", [null, [23, 32], [23, 47]]]]], [], []]], ["loc", [null, [23, 6], [23, 49]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.causes", ["loc", [null, [29, 32], [29, 44]]]]], [], []]], ["loc", [null, [29, 6], [29, 46]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.contributions", ["loc", [null, [35, 32], [35, 51]]]]], [], []]], ["loc", [null, [35, 6], [35, 53]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.industries", ["loc", [null, [41, 32], [41, 48]]]]], [], []]], ["loc", [null, [41, 6], [41, 50]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.receivedContributions", ["loc", [null, [47, 32], [47, 59]]]]], [], []]], ["loc", [null, [47, 6], [47, 61]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.skills", ["loc", [null, [53, 32], [53, 44]]]]], [], []]], ["loc", [null, [53, 6], [53, 46]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.name", ["loc", [null, [59, 32], [59, 42]]]]], [], []]], ["loc", [null, [59, 6], [59, 44]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.email", ["loc", [null, [65, 32], [65, 43]]]]], [], []]], ["loc", [null, [65, 6], [65, 45]]]]],
+      statements: [["element", "action", ["save"], ["on", "submit"], ["loc", [null, [1, 6], [1, 35]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.name", ["loc", [null, [5, 32], [5, 42]]]]], [], []]], ["loc", [null, [5, 6], [5, 44]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.type", ["loc", [null, [11, 32], [11, 42]]]]], [], []]], ["loc", [null, [11, 6], [11, 44]]]], ["inline", "input", [], ["type", "text", "value", "none"], ["loc", [null, [17, 6], [17, 40]]]], ["inline", "input", [], ["type", "text", "value", "none"], ["loc", [null, [23, 6], [23, 40]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.locations", ["loc", [null, [29, 32], [29, 47]]]]], [], []]], ["loc", [null, [29, 6], [29, 49]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.causes", ["loc", [null, [35, 32], [35, 44]]]]], [], []]], ["loc", [null, [35, 6], [35, 46]]]], ["inline", "input", [], ["type", "text", "value", "none"], ["loc", [null, [41, 6], [41, 40]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.industries", ["loc", [null, [47, 32], [47, 48]]]]], [], []]], ["loc", [null, [47, 6], [47, 50]]]], ["inline", "input", [], ["type", "text", "value", "none"], ["loc", [null, [53, 6], [53, 40]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.skills", ["loc", [null, [59, 32], [59, 44]]]]], [], []]], ["loc", [null, [59, 6], [59, 46]]]], ["inline", "input", [], ["type", "text", "value", ["subexpr", "@mut", [["get", "model.email", ["loc", [null, [65, 32], [65, 43]]]]], [], []]], ["loc", [null, [65, 6], [65, 45]]]]],
       locals: [],
       templates: []
     };
@@ -4262,11 +4257,13 @@ define("crowd-hero-frontend/orgs/index/template", ["exports"], function (exports
             var el2 = dom.createTextNode("\n          ");
             dom.appendChild(el1, el2);
             var el2 = dom.createElement("td");
-            var el3 = dom.createTextNode("\n            ");
+            var el3 = dom.createTextNode("\n            none\n          ");
             dom.appendChild(el2, el3);
-            var el3 = dom.createComment("");
-            dom.appendChild(el2, el3);
-            var el3 = dom.createTextNode("\n          ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createTextNode("\n          ");
+            dom.appendChild(el1, el2);
+            var el2 = dom.createElement("td");
+            var el3 = dom.createTextNode("\n            none\n          ");
             dom.appendChild(el2, el3);
             dom.appendChild(el1, el2);
             var el2 = dom.createTextNode("\n          ");
@@ -4292,11 +4289,7 @@ define("crowd-hero-frontend/orgs/index/template", ["exports"], function (exports
             var el2 = dom.createTextNode("\n          ");
             dom.appendChild(el1, el2);
             var el2 = dom.createElement("td");
-            var el3 = dom.createTextNode("\n            ");
-            dom.appendChild(el2, el3);
-            var el3 = dom.createComment("");
-            dom.appendChild(el2, el3);
-            var el3 = dom.createTextNode("\n          ");
+            var el3 = dom.createTextNode("\n            none\n          ");
             dom.appendChild(el2, el3);
             dom.appendChild(el1, el2);
             var el2 = dom.createTextNode("\n          ");
@@ -4312,21 +4305,7 @@ define("crowd-hero-frontend/orgs/index/template", ["exports"], function (exports
             var el2 = dom.createTextNode("\n          ");
             dom.appendChild(el1, el2);
             var el2 = dom.createElement("td");
-            var el3 = dom.createTextNode("\n            ");
-            dom.appendChild(el2, el3);
-            var el3 = dom.createComment("");
-            dom.appendChild(el2, el3);
-            var el3 = dom.createTextNode("\n          ");
-            dom.appendChild(el2, el3);
-            dom.appendChild(el1, el2);
-            var el2 = dom.createTextNode("\n          ");
-            dom.appendChild(el1, el2);
-            var el2 = dom.createElement("td");
-            var el3 = dom.createTextNode("\n            ");
-            dom.appendChild(el2, el3);
-            var el3 = dom.createComment("");
-            dom.appendChild(el2, el3);
-            var el3 = dom.createTextNode("\n          ");
+            var el3 = dom.createTextNode("\n            none\n          ");
             dom.appendChild(el2, el3);
             dom.appendChild(el1, el2);
             var el2 = dom.createTextNode("\n          ");
@@ -4402,24 +4381,20 @@ define("crowd-hero-frontend/orgs/index/template", ["exports"], function (exports
           buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
             var element0 = dom.childAt(fragment, [1]);
             var element1 = dom.childAt(element0, [27, 1]);
-            var morphs = new Array(14);
+            var morphs = new Array(10);
             morphs[0] = dom.createMorphAt(dom.childAt(element0, [1]), 1, 1);
-            morphs[1] = dom.createMorphAt(dom.childAt(element0, [3]), 1, 1);
-            morphs[2] = dom.createMorphAt(dom.childAt(element0, [5]), 1, 1);
-            morphs[3] = dom.createMorphAt(dom.childAt(element0, [7]), 1, 1);
-            morphs[4] = dom.createMorphAt(dom.childAt(element0, [9]), 1, 1);
-            morphs[5] = dom.createMorphAt(dom.childAt(element0, [11]), 1, 1);
-            morphs[6] = dom.createMorphAt(dom.childAt(element0, [13]), 1, 1);
-            morphs[7] = dom.createMorphAt(dom.childAt(element0, [15]), 1, 1);
-            morphs[8] = dom.createMorphAt(dom.childAt(element0, [17]), 1, 1);
-            morphs[9] = dom.createMorphAt(dom.childAt(element0, [19]), 1, 1);
-            morphs[10] = dom.createMorphAt(dom.childAt(element0, [21]), 1, 1);
-            morphs[11] = dom.createMorphAt(dom.childAt(element0, [23]), 1, 1);
-            morphs[12] = dom.createMorphAt(dom.childAt(element0, [25]), 1, 1);
-            morphs[13] = dom.createElementMorph(element1);
+            morphs[1] = dom.createMorphAt(dom.childAt(element0, [7]), 1, 1);
+            morphs[2] = dom.createMorphAt(dom.childAt(element0, [9]), 1, 1);
+            morphs[3] = dom.createMorphAt(dom.childAt(element0, [13]), 1, 1);
+            morphs[4] = dom.createMorphAt(dom.childAt(element0, [17]), 1, 1);
+            morphs[5] = dom.createMorphAt(dom.childAt(element0, [19]), 1, 1);
+            morphs[6] = dom.createMorphAt(dom.childAt(element0, [21]), 1, 1);
+            morphs[7] = dom.createMorphAt(dom.childAt(element0, [23]), 1, 1);
+            morphs[8] = dom.createMorphAt(dom.childAt(element0, [25]), 1, 1);
+            morphs[9] = dom.createElementMorph(element1);
             return morphs;
           },
-          statements: [["content", "org.type", ["loc", [null, [53, 12], [53, 24]]]], ["content", "org.members", ["loc", [null, [56, 12], [56, 27]]]], ["content", "org.partners", ["loc", [null, [59, 12], [59, 28]]]], ["content", "org.locations", ["loc", [null, [62, 12], [62, 29]]]], ["content", "org.causes", ["loc", [null, [65, 12], [65, 26]]]], ["content", "org.contributions", ["loc", [null, [68, 12], [68, 33]]]], ["content", "org.industries", ["loc", [null, [71, 12], [71, 30]]]], ["content", "org.receivedContributions", ["loc", [null, [74, 12], [74, 41]]]], ["content", "org.skills", ["loc", [null, [77, 12], [77, 26]]]], ["content", "org.name", ["loc", [null, [80, 12], [80, 24]]]], ["content", "org.email", ["loc", [null, [83, 12], [83, 25]]]], ["inline", "link-to", ["Edit", "orgs.edit", ["get", "org", ["loc", [null, [86, 41], [86, 44]]]]], [], ["loc", [null, [86, 12], [86, 46]]]], ["inline", "link-to", ["Show", "orgs.show", ["get", "org", ["loc", [null, [89, 41], [89, 44]]]]], [], ["loc", [null, [89, 12], [89, 46]]]], ["element", "action", ["remove", ["get", "org", ["loc", [null, [92, 42], [92, 45]]]]], [], ["loc", [null, [92, 24], [92, 47]]]]],
+          statements: [["content", "org.type", ["loc", [null, [53, 12], [53, 24]]]], ["content", "org.locations", ["loc", [null, [62, 12], [62, 29]]]], ["content", "org.causes", ["loc", [null, [65, 12], [65, 26]]]], ["content", "org.industries", ["loc", [null, [71, 12], [71, 30]]]], ["content", "org.skills", ["loc", [null, [77, 12], [77, 26]]]], ["content", "org.name", ["loc", [null, [80, 12], [80, 24]]]], ["content", "org.email", ["loc", [null, [83, 12], [83, 25]]]], ["inline", "link-to", ["Edit", "orgs.edit", ["get", "org", ["loc", [null, [86, 41], [86, 44]]]]], [], ["loc", [null, [86, 12], [86, 46]]]], ["inline", "link-to", ["Show", "orgs.show", ["get", "org", ["loc", [null, [89, 41], [89, 44]]]]], [], ["loc", [null, [89, 12], [89, 46]]]], ["element", "action", ["remove", ["get", "org", ["loc", [null, [92, 42], [92, 45]]]]], [], ["loc", [null, [92, 24], [92, 47]]]]],
           locals: ["org"],
           templates: []
         };
@@ -4749,7 +4724,7 @@ define("crowd-hero-frontend/orgs/show/template", ["exports"], function (exports)
             "column": 0
           },
           "end": {
-            "line": 62,
+            "line": 57,
             "column": 0
           }
         },
@@ -4772,7 +4747,7 @@ define("crowd-hero-frontend/orgs/show/template", ["exports"], function (exports)
         var el1 = dom.createTextNode("\n\n");
         dom.appendChild(el0, el1);
         var el1 = dom.createElement("h1");
-        var el2 = dom.createTextNode("Org show");
+        var el2 = dom.createComment("");
         dom.appendChild(el1, el2);
         dom.appendChild(el0, el1);
         var el1 = dom.createTextNode("\n\n");
@@ -4805,7 +4780,7 @@ define("crowd-hero-frontend/orgs/show/template", ["exports"], function (exports)
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("span");
-        var el3 = dom.createComment("");
+        var el3 = dom.createTextNode("none");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n");
@@ -4823,7 +4798,7 @@ define("crowd-hero-frontend/orgs/show/template", ["exports"], function (exports)
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("span");
-        var el3 = dom.createComment("");
+        var el3 = dom.createTextNode("none");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n");
@@ -4877,7 +4852,7 @@ define("crowd-hero-frontend/orgs/show/template", ["exports"], function (exports)
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("span");
-        var el3 = dom.createComment("");
+        var el3 = dom.createTextNode("none");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n");
@@ -4907,13 +4882,13 @@ define("crowd-hero-frontend/orgs/show/template", ["exports"], function (exports)
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("strong");
-        var el3 = dom.createTextNode("Receivedcontributions:");
+        var el3 = dom.createTextNode("Received Contributions:");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n  ");
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("span");
-        var el3 = dom.createComment("");
+        var el3 = dom.createTextNode("none");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n");
@@ -4926,24 +4901,6 @@ define("crowd-hero-frontend/orgs/show/template", ["exports"], function (exports)
         dom.appendChild(el1, el2);
         var el2 = dom.createElement("strong");
         var el3 = dom.createTextNode("Skills:");
-        dom.appendChild(el2, el3);
-        dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n  ");
-        dom.appendChild(el1, el2);
-        var el2 = dom.createElement("span");
-        var el3 = dom.createComment("");
-        dom.appendChild(el2, el3);
-        dom.appendChild(el1, el2);
-        var el2 = dom.createTextNode("\n");
-        dom.appendChild(el1, el2);
-        dom.appendChild(el0, el1);
-        var el1 = dom.createTextNode("\n\n");
-        dom.appendChild(el0, el1);
-        var el1 = dom.createElement("p");
-        var el2 = dom.createTextNode("\n  ");
-        dom.appendChild(el1, el2);
-        var el2 = dom.createElement("strong");
-        var el3 = dom.createTextNode("Name:");
         dom.appendChild(el2, el3);
         dom.appendChild(el1, el2);
         var el2 = dom.createTextNode("\n  ");
@@ -4978,22 +4935,18 @@ define("crowd-hero-frontend/orgs/show/template", ["exports"], function (exports)
         return el0;
       },
       buildRenderNodes: function buildRenderNodes(dom, fragment, contextualElement) {
-        var morphs = new Array(12);
+        var morphs = new Array(8);
         morphs[0] = dom.createMorphAt(dom.childAt(fragment, [0]), 1, 1);
-        morphs[1] = dom.createMorphAt(dom.childAt(fragment, [4, 3]), 0, 0);
-        morphs[2] = dom.createMorphAt(dom.childAt(fragment, [6, 3]), 0, 0);
-        morphs[3] = dom.createMorphAt(dom.childAt(fragment, [8, 3]), 0, 0);
-        morphs[4] = dom.createMorphAt(dom.childAt(fragment, [10, 3]), 0, 0);
-        morphs[5] = dom.createMorphAt(dom.childAt(fragment, [12, 3]), 0, 0);
-        morphs[6] = dom.createMorphAt(dom.childAt(fragment, [14, 3]), 0, 0);
-        morphs[7] = dom.createMorphAt(dom.childAt(fragment, [16, 3]), 0, 0);
-        morphs[8] = dom.createMorphAt(dom.childAt(fragment, [18, 3]), 0, 0);
-        morphs[9] = dom.createMorphAt(dom.childAt(fragment, [20, 3]), 0, 0);
-        morphs[10] = dom.createMorphAt(dom.childAt(fragment, [22, 3]), 0, 0);
-        morphs[11] = dom.createMorphAt(dom.childAt(fragment, [24, 3]), 0, 0);
+        morphs[1] = dom.createMorphAt(dom.childAt(fragment, [2]), 0, 0);
+        morphs[2] = dom.createMorphAt(dom.childAt(fragment, [4, 3]), 0, 0);
+        morphs[3] = dom.createMorphAt(dom.childAt(fragment, [10, 3]), 0, 0);
+        morphs[4] = dom.createMorphAt(dom.childAt(fragment, [12, 3]), 0, 0);
+        morphs[5] = dom.createMorphAt(dom.childAt(fragment, [16, 3]), 0, 0);
+        morphs[6] = dom.createMorphAt(dom.childAt(fragment, [20, 3]), 0, 0);
+        morphs[7] = dom.createMorphAt(dom.childAt(fragment, [22, 3]), 0, 0);
         return morphs;
       },
-      statements: [["inline", "link-to", ["Org list", "orgs.index"], [], ["loc", [null, [2, 2], [2, 38]]]], ["content", "model.type", ["loc", [null, [9, 8], [9, 22]]]], ["content", "model.members", ["loc", [null, [14, 8], [14, 25]]]], ["content", "model.partners", ["loc", [null, [19, 8], [19, 26]]]], ["content", "model.locations", ["loc", [null, [24, 8], [24, 27]]]], ["content", "model.causes", ["loc", [null, [29, 8], [29, 24]]]], ["content", "model.contributions", ["loc", [null, [34, 8], [34, 31]]]], ["content", "model.industries", ["loc", [null, [39, 8], [39, 28]]]], ["content", "model.receivedContributions", ["loc", [null, [44, 8], [44, 39]]]], ["content", "model.skills", ["loc", [null, [49, 8], [49, 24]]]], ["content", "model.name", ["loc", [null, [54, 8], [54, 22]]]], ["content", "model.email", ["loc", [null, [59, 8], [59, 23]]]]],
+      statements: [["inline", "link-to", ["Org list", "orgs.index"], [], ["loc", [null, [2, 2], [2, 38]]]], ["content", "model.name", ["loc", [null, [5, 4], [5, 18]]]], ["content", "model.type", ["loc", [null, [9, 8], [9, 22]]]], ["content", "model.locations", ["loc", [null, [24, 8], [24, 27]]]], ["content", "model.causes", ["loc", [null, [29, 8], [29, 24]]]], ["content", "model.industries", ["loc", [null, [39, 8], [39, 28]]]], ["content", "model.skills", ["loc", [null, [49, 8], [49, 24]]]], ["content", "model.email", ["loc", [null, [54, 8], [54, 23]]]]],
       locals: [],
       templates: []
     };
